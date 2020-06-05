@@ -9,6 +9,10 @@ RUN apk add --no-cache git build-base nodejs
 # Allow for timezone setting in _config.yml
 RUN apk add --update tzdata
 
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+RUN sudo apt update && sudo apt install yarn
+
 # debug
 RUN bundle version
 
