@@ -9,7 +9,7 @@ if [ -z "${JEKYLL_PAT}" ]; then
 fi 
 
 echo "Installing node packages"
-npm install
+yarn install
 
 echo "::debug ::Starting bundle install"
 bundle config path vendor/bundle
