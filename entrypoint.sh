@@ -8,6 +8,9 @@ if [ -z "${JEKYLL_PAT}" ]; then
   exit 1
 fi 
 
+echo "Installing node packages"
+npm install
+
 echo "::debug ::Starting bundle install"
 bundle config path vendor/bundle
 bundle install
